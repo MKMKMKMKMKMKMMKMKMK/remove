@@ -12,14 +12,12 @@ def remove_background(image_data):
     output_data = rembg.remove(image_data)
     return output_data
 
-# Streamlitアプリケーションの設定
-def main():
-    st.title('画像背景除去ツール')
+st.title('画像背景除去ツール')
 
     # ファイルアップロードセクション
-    uploaded_file = st.file_uploader("画像をアップロードしてください", type=["png", "jpg", "jpeg"])
+uploaded_file = st.file_uploader("画像をアップロードしてください", type=["png", "jpg", "jpeg"])
 
-    if uploaded_file is not None:
+if uploaded_file is not None:
         # アップロードされたファイルの表示
         st.image(uploaded_file, caption='アップロードされた画像', use_column_width=True)
         
@@ -38,5 +36,4 @@ def main():
         output_path = io.BytesIO(output_image_data)
         st.download_button(label="画像をダウンロード", data=output_path, file_name="output_image.png", mime="image/png")
 
-if __name__ == "__main__":
-    main()
+
