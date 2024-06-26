@@ -1,12 +1,13 @@
 import streamlit as st
 from PIL import Image
 import io
+from rembg import remove
 
 # 背景除去関数の定義（仮の関数として実装）
 def remove_background(image_data):
     # ここで画像の背景を除去する処理を実装します。
     # 例: 画像処理ライブラリを使用して背景を除去する。
-    from rembg import remove
+
     output_data = remove(image_data)
     return output_data
 
